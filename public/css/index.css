@@ -1,0 +1,89 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root{
+	font-size: 62.5%;
+}
+
+body{
+	height: 100vh;
+
+	display: flex;
+	text-align: center;
+
+	background: linear-gradient(160deg, #000000 0%, #333333 100%);
+
+	color: white;
+	font: 600 2.2rem/1 "Nunito", sans-serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+input[type=number] {
+	-moz-appearance: textfield;
+}
+
+#caixaCorpo{
+	margin: auto;
+}
+
+header{
+	margin: 0 0 20px;
+}
+
+main{
+	width: min(80vw, 800px);
+
+	background: #ebf2f5;
+	border-radius: 10px;
+
+	padding: 15px;
+
+	color: black;
+}
+
+.pontos{
+	white-space: pre;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin: 5px 0;
+}
+
+.pontos > input{
+	width: 44px;
+
+	font: 800 2rem/1 "Nunito", sans-serif;
+	text-align: center;
+
+	margin: 0 4px;
+
+	border: none;
+	border-radius: 5px;
+
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.315);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#informacoesFuncao{
+	margin: 20px 0;
+}
+
+#informacoesFuncao > :last-child{
+	font-size: 34px;
+	font-weight: 800;
+}
+
+#calculaPontoEspecifico{
+	opacity: 0;
+
+	transition: opacity 1500ms;
+}

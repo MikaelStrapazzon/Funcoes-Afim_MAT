@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Função Afim</title>
+
+	<link rel="stylesheet" href="public/css/index.css">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap">
+	<link rel="stylesheet" href="public/bibliotecas/chartist-js/chartist.css">
+</head>
+<body>
+	<div id="caixaCorpo">
+		<header>
+			<h1>Função Afim</h1>
+		</header>
+		<main>
+			<div>
+				<div class="pontos">
+					<p>Ponto A: (</p>
+					<input type="number" class="pontoValor">
+					<p>,</p>
+					<input type="number" class="pontoValor">
+					<p>)</p>
+				</div>
+				<div class="pontos">
+					<p>Ponto B: (</p>
+					<input type="number" class="pontoValor">
+					<p>,</p>
+					<input type="number" class="pontoValor">
+					<p>)</p>
+				</div>
+
+				<div id="informacoesFuncao">
+					<p>Função</p>
+					<p>ax + b</p>
+				</div>
+			</div>
+			<div class="ct-chart ct-octave"></div>
+			<div id="calculaPontoEspecifico">
+				<div class="pontos">
+					<p>Ponto: (</p>
+					<input type="number" class="pontoCalcula">
+					<p>, y )</p>
+				</div>
+				<div class="pontos">
+					<p>Ponto: ( x,</p>
+					<input type="number" class="pontoCalcula">
+					<p> )</p>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<script src="public/bibliotecas/jquery_3-5-1.js"></script>
+	<script src="public/bibliotecas/chartist-js/chartist.js"></script>
+	<script src="public/js/index.js"></script>
+</body>
+</html>
