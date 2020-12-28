@@ -18,6 +18,8 @@ $(document).ready(function()
 		$(".ct-chart").removeClass("ct-square");
 		$(".ct-chart").addClass("ct-octave");
 	}
+
+	criarGrafico("");
 });
 
 $(window).resize(function()
@@ -117,10 +119,28 @@ $(".pontoValor").blur(function()
 		}
 
 		$("#calculaPontoEspecifico").css("opacity", "1");
+
+		let maior = valorAX < valorBX ? valorBX : valorAX;
+		let menor = valorAX > valorBX ? valorBX : valorAX;
+
+		series = [[]];
+
+		for(let index = menor; index <= maior; index++)
+		{
+			series[0].push
+			({
+				x: index,
+				y: valorA * index + valorB
+			});
+		}
+
+		criarGrafico(series);
 	}
 	else
 	{
 		$("#calculaPontoEspecifico").css("opacity", "0");
+
+		criarGrafico("");
 	}
 
 	$("#informacoesFuncao > :last-child").html(funcao);
@@ -156,16 +176,35 @@ $(".pontoCalcular").blur(function()
 	}
 });
 
-var data = {
-	// A labels array that can contain any sort of values
-	labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-	// Our series array that contains series objects or in this case series data arrays
-	series: [
-		[5, 2, 4, 2, 0]
-	]
-};
+function criarGrafico( series )
+{
+	if( series == "")
+	{
+		series = [[]];
 
-// Create a new line chart object where as first parameter we pass in a selector
-// that is resolving to our chart container element. The Second parameter
-// is the actual data object.
-new Chartist.Line('.ct-chart', data);
+		for(let index = -1; index < 10; index++)
+		{
+			series[0].push
+			({
+				x: index,
+				y: 1 * index + 2
+			});
+		}
+	}
+
+	new Chartist.Line('.ct-chart',
+	{
+		series
+	},
+	{
+		axisX:
+		{
+			type: Chartist.AutoScaleAxis,
+			onlyInteger: true
+		},
+		axisY:
+		{
+			onlyInteger: true
+		}
+	});
+}
