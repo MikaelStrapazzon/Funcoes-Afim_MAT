@@ -126,6 +126,36 @@ $(".pontoValor").blur(function()
 	$("#informacoesFuncao > :last-child").html(funcao);
 });
 
+$(".pontoCalcular").blur(function()
+{
+	if(!this.value && this.value !== 0)
+	{
+		if(this.id == "calY")
+		{
+			$("#calYtela").html("y");
+		}
+		else
+		{
+			$("#calXtela").html("x");
+		}
+
+		return false;
+	}
+
+	if(this.id == "calY")
+	{
+		valorY = valorA * this.value + valorB;
+
+		$("#calYtela").html(valorY);
+	}
+	else
+	{
+		valorX = (this.value - valorB)/valorA;
+
+		$("#calXtela").html(valorX);
+	}
+});
+
 var data = {
 	// A labels array that can contain any sort of values
 	labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
